@@ -1,15 +1,25 @@
 import java.time.LocalDate;
 
-public class ExpirationDocument extends Document{ //документ у которого есть срок действия
 
-  protected LocalDate expiredDate;//когда заканчивается доверенность
+public abstract class ExpirationDocument extends Document { // документ, у которого есть срок действия
 
-  public ExpirationDocument(String name, LocalDate createdDate, LocalDate expiredDate){
+  protected LocalDate expiredDate; // когда заканчивается документ
+
+  public ExpirationDocument(String name) {
+    super(name);
+  }
+
+  public ExpirationDocument(String name, String createdDate) {
     super(name, createdDate);
-    this.expiredDate = expiredDate;
-  }
-  public boolean isExpired() {
-    return expiredDate.isBefore(LocalDate.now());//дата окончания должна быть до текущей даты
   }
 
+  public boolean isExpired() {
+    // дата окончания документа до текущей даты
+    return expiredDate.isBefore(LocalDate.now());
+  }
+
+  public boolean isValid() {
+    // документ со сроком валидный когда дата окончания стоит после даты создания
+    return expiredDate.isAfter(createdDate);
+  }
 }
