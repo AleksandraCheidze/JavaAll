@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -6,8 +7,8 @@ import java.util.Set;
 public class Pizza {
 
   // Map<НазваниеПиццы, Map<Размер, Стоимость>>
-  private static final Map<String, Map<String, Double>> prices = new HashMap<>();
-  // TODO прочитаем из файла
+  private static final Map<String, Map<String, Double>> prices = readFromCsv("res/pizzas.csv");
+
 
   private final String name;
   private final String size;
@@ -54,5 +55,17 @@ public class Pizza {
     }
 
     return new Pizza(name, size);
+  }
+
+  private static Map<String, Map<String, Double>> readFromCsv(String filename) {
+    // CSV - comma separated values - значения, разделенные запятыми
+    // самый простой формат таблиц
+    Map<String, Map<String, Double>> result = new HashMap<>();
+    File зшяяфыАшду = new File(filename);
+    try {
+      Scanner scanner = new Scanner(pizzasFile);
+      Scanner scanner1
+    }
+    return result;
   }
 }
