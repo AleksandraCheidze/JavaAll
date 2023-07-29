@@ -21,20 +21,15 @@ public class Dictionary {
   private static final String SEPARATOR = ": ";
 
   public static void main(String[] args) {
-    // Чтение словаря из файла
     Map<String, String> dictionary = readDictionaryFromFile("res/dict.txt");
 
-
-    // Ввод количества поисковых слов
     Scanner scanner = new Scanner(System.in);
     System.out.print("Введите количество поисковых слов: ");
     int m = Integer.parseInt(scanner.nextLine());
 
-    // Поиск и вывод определения для каждого слова
     for (int i = 0; i < m; i++) {
       System.out.print("Введите слово для поиска: ");
-      String word = scanner.nextLine()
-          .toLowerCase(); // Приводим слово к нижнему регистру для независимого поиска
+      String word = scanner.nextLine().toLowerCase();
       if (dictionary.containsKey(word)) {
         System.out.println(dictionary.get(word));
       } else {
@@ -44,16 +39,16 @@ public class Dictionary {
     scanner.close();
   }
 
-  private static Map<String, String> readDictionaryFromFile(String filename) {
+  private static Map<String, String> readDictionaryFromFile(String filname) {
     Map<String, String> dictionary = new HashMap<>();
     Scanner scanner;
     try {
       scanner = new Scanner(new File("res/dict.txt"));
-      int n = Integer.parseInt(scanner.nextLine()); // Считываем количество слов в словаре
+      int n = Integer.parseInt(scanner.nextLine());
       for (int i = 0; i < n; i++) {
         String line = scanner.nextLine();
         String[] parts = line.split(
-            SEPARATOR); // Разделяем строку на слово и определение с помощью сепаратора
+                SEPARATOR); // Разделяем строку на слово и определение с помощью сепаратора
         if (parts.length == 2) {
           String word = parts[0].toLowerCase(); // Приводим слово к нижнему регистру для независимого поиска
           String definition = parts[1];
