@@ -26,7 +26,6 @@ public class Dictionary {
     Scanner scanner = new Scanner(System.in);
     System.out.print("Введите количество поисковых слов: ");
     int m = Integer.parseInt(scanner.nextLine());
-
     for (int i = 0; i < m; i++) {
       System.out.print("Введите слово для поиска: ");
       String word = scanner.nextLine().toLowerCase();
