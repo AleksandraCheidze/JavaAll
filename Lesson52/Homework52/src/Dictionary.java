@@ -24,6 +24,7 @@ public class Dictionary {
     // Чтение словаря из файла
     Map<String, String> dictionary = readDictionaryFromFile("res/dict.txt");
 
+
     // Ввод количества поисковых слов
     Scanner scanner = new Scanner(System.in);
     System.out.print("Введите количество поисковых слов: ");
