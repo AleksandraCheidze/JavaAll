@@ -41,7 +41,7 @@ public class Dictionary {
         System.out.println("Не найдено");
       }
     }
-    scanner.close(); // Don't forget to close the scanner after use
+    scanner.close();
   }
 
   private static Map<String, String> readDictionaryFromFile(String filename) {
