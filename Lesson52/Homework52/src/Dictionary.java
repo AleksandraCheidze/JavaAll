@@ -43,16 +43,15 @@ public class Dictionary {
     Map<String, String> dictionary = new HashMap<>();
     Scanner scanner;
     try {
-      scanner = new Scanner(new File("res/dict.txt"));
+      scanner = new Scanner(new File(filname));
       int n = Integer.parseInt(scanner.nextLine());
       for (int i = 0; i < n; i++) {
         String line = scanner.nextLine();
-        String[] parts = line.split(
-                SEPARATOR); // Разделяем строку на слово и определение с помощью сепаратора
+        String[] parts = line.split(SEPARATOR);
         if (parts.length == 2) {
-          String word = parts[0].toLowerCase(); // Приводим слово к нижнему регистру для независимого поиска
+          String word = parts[0].toLowerCase();
           String definition = parts[1];
-          dictionary.put(word, definition); // Добавляем слово и его определение в словарь
+          dictionary.put(word, definition);
         }
       }
       scanner.close();
