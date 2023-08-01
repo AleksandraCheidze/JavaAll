@@ -2,9 +2,9 @@ import java.util.Objects;
 
 public class Book implements Comparable<Book> {
 
-    private String author;
-    private String name;
-    private int numberOfPages;
+    private final String author;
+    private final String name;
+    private final int numberOfPages;
 
     public Book(String author, String name, int numberOfPages) {
         this.author = author;
@@ -52,17 +52,5 @@ public class Book implements Comparable<Book> {
 
     public int getNumberOfPages() {
         return numberOfPages;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setNumberOfPages(int numberOfPages) {
-        this.numberOfPages = numberOfPages;
     }
 }
