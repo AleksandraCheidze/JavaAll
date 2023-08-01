@@ -21,6 +21,18 @@ public class Book implements Comparable<Book> {
         return Integer.compare(numberOfPages, otherBook.numberOfPages);
     }
 
+    @Override
+    public boolean equals(Object otherBook) {
+        if (this == otherBook) {
+            return true;
+        }
+        if (!(otherBook instanceof Book other)) {
+            return false;
+        }
+        return numberOfPages == other.numberOfPages &&
+                name.equals(other.name) &&
+                author.equals(other.author);
+    }
 
     public String getAuthor() {
         return author;
