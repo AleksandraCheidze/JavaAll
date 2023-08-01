@@ -40,6 +40,10 @@ public class Book implements Comparable<Book> {
         return Objects.hash(author, name, numberOfPages);
     }
 
+    public String toString() {
+        return author + ", \"" + name + "\", " + numberOfPages + " страниц";
+    }
+
     public String getAuthor() {
         return author;
     }
