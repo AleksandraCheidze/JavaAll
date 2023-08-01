@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Book implements Comparable<Book> {
 
     private String author;
@@ -32,6 +34,10 @@ public class Book implements Comparable<Book> {
         return numberOfPages == other.numberOfPages &&
                 name.equals(other.name) &&
                 author.equals(other.author);
+    }
+
+    public int hashCode() {
+        return Objects.hash(author, name, numberOfPages);
     }
 
     public String getAuthor() {
