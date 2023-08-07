@@ -26,6 +26,14 @@ public class BookTests {
     assertNotEquals(book1, book3);
   }
 
+  @Test
+  public void testHashCode() {
+    Book book1 = new Book("Author", "Title", 200);
+    Book book2 = new Book("Author", "Title", 200);
+
+    assertEquals(book1.hashCode(), book2.hashCode());
+  }
+
 
 
 }
