@@ -4,8 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class BookTests {
+// Напишите автотесты с использованием JUnit для задачи 1 из предыдущего домашнего задания.
+// Проверьте краевые случаи, предусмотрите разные варианты.
 
+public class BookTests {
   @Test
   public void testCompareTo() {
     Book book1 = new Book("Author1", "Title1", 100);
