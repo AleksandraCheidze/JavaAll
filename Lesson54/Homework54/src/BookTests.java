@@ -34,6 +34,10 @@ public class BookTests {
     assertEquals(book1.hashCode(), book2.hashCode());
   }
 
-
-
+  @Test
+  public void testToString() {
+    Book book = new Book("Author", "Title", 200);
+    String expected = "Author, \"Title\", 200 страниц";
+  }
 }
+
